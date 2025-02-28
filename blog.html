@@ -2,94 +2,103 @@
 <html lang="en" data-theme="light">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog - DOM Questions</title>
-  <!-- Tailwind & DaisyUI CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.0/dist/full.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - DOM Questions</title>
+    <!-- Tailwind & DaisyUI CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-base-200 p-6">
 
 
-<!-- Navbar -->
-<header>
-    <div class="navbar bg-base-100 shadow-md rounded-xl mx-auto my-4 px-4 max-w-5xl flex justify-between items-center">
-        <!-- Logo & Title -->
-        <div class="flex items-center space-x-2">
-            <div class="bg-blue-500 p-2 rounded-lg">
-                <img src="./assets/logo.png" alt="DevBoard Logo" class="w-6 h-6">
+    <!-- Navbar -->
+    <header>
+        <div
+            class="navbar bg-base-100 shadow-md rounded-xl mx-auto my-4 px-4 max-w-5xl flex justify-between items-center">
+            <!-- Logo & Title -->
+            <div class="flex items-center space-x-2">
+                <div class="bg-blue-500 p-2 rounded-lg">
+                    <img src="./assets/logo.png" alt="DevBoard Logo" class="w-6 h-6">
+                </div>
+                <span class="text-xl font-bold text-gray-800">
+                    Dev<span class="text-blue-600">Board</span>
+                </span>
             </div>
-            <span class="text-xl font-bold text-gray-800">
-                Dev<span class="text-blue-600">Board</span>
-            </span>
+
+            <!-- Back to Dock Button -->
+            <button id="backToDock"
+                class="btn bg-blue-500 shadow-md font-bold text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all normal-case">
+                Back To Dock
+            </button>
+
+        </div>
+    </header>
+
+    <!-- blogs  -->
+
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-6 text-center">Blogs</h1>
+
+        <!-- Question 1 -->
+        <div class="card bg-base-100 shadow-md mb-4">
+            <div class="card-body">
+                <h2 class="card-title">1. What are the different ways to select an element in the DOM?</h2>
+                <ul class="list-disc list-inside">
+                    <li><code>getElementById()</code></li>
+                    <li><code>getElementsByClassName()</code></li>
+                    <li><code>getElementsByTagName()</code></li>
+                    <li><code>querySelector()</code></li>
+                    <li><code>querySelectorAll()</code></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Task Count & Theme Switch -->
-        <button class="btn bg-blue-500 shadow-md font-bold text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all normal-case">
-            Back To Dock
-        </button>
-        
-    </div>
-</header>
+        <!-- Question 2 -->
+        <div class="card bg-base-100 shadow-md mb-4">
+            <div class="card-body">
+                <h2 class="card-title">2. What is the difference between <code>innerHTML</code>, <code>innerText</code>,
+                    and <code>textContent</code>?</h2>
+                <ul class="list-disc list-inside">
+                    <li><strong>innerHTML:</strong> Gets or sets HTML markup contained within the element.</li>
+                    <li><strong>innerText:</strong> Gets or sets the visible text (ignores hidden elements).</li>
+                    <li><strong>textContent:</strong> Gets or sets the full text content, including hidden elements.
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-<!-- blogs  -->
+        <!-- Question 3 -->
+        <div class="card bg-base-100 shadow-md mb-4">
+            <div class="card-body">
+                <h2 class="card-title">3. What is event delegation in the DOM?</h2>
+                <p>
+                    Event delegation is a technique where a single event listener is attached to a parent element to
+                    manage events from multiple child elements. It works by utilizing the event propagation and
+                    <code>event.target</code> to determine which child element triggered the event.
+                </p>
+            </div>
+        </div>
 
-  <div class="container mx-auto">
-    <h1 class="text-4xl font-bold mb-6 text-center">Blogs</h1>
+        <!-- Question 4 -->
+        <div class="card bg-base-100 shadow-md mb-4">
+            <div class="card-body">
+                <h2 class="card-title">4. What is event bubbling in the DOM?</h2>
+                <p>
+                    Event bubbling is a process where an event starts at the target element and then bubbles up through
+                    its ancestors in the DOM hierarchy. This allows parent elements to handle events that occur on their
+                    children.
+                </p>
+            </div>
+        </div>
 
-    <!-- Question 1 -->
-    <div class="card bg-base-100 shadow-md mb-4">
-      <div class="card-body">
-        <h2 class="card-title">1. What are the different ways to select an element in the DOM?</h2>
-        <ul class="list-disc list-inside">
-          <li><code>getElementById()</code></li>
-          <li><code>getElementsByClassName()</code></li>
-          <li><code>getElementsByTagName()</code></li>
-          <li><code>querySelector()</code></li>
-          <li><code>querySelectorAll()</code></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Question 2 -->
-    <div class="card bg-base-100 shadow-md mb-4">
-      <div class="card-body">
-        <h2 class="card-title">2. What is the difference between <code>innerHTML</code>, <code>innerText</code>, and <code>textContent</code>?</h2>
-        <ul class="list-disc list-inside">
-          <li><strong>innerHTML:</strong> Gets or sets HTML markup contained within the element.</li>
-          <li><strong>innerText:</strong> Gets or sets the visible text (ignores hidden elements).</li>
-          <li><strong>textContent:</strong> Gets or sets the full text content, including hidden elements.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="card bg-base-100 shadow-md mb-4">
-      <div class="card-body">
-        <h2 class="card-title">3. What is event delegation in the DOM?</h2>
-        <p>
-          Event delegation is a technique where a single event listener is attached to a parent element to manage events from multiple child elements. It works by utilizing the event propagation and <code>event.target</code> to determine which child element triggered the event.
-        </p>
-      </div>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="card bg-base-100 shadow-md mb-4">
-      <div class="card-body">
-        <h2 class="card-title">4. What is event bubbling in the DOM?</h2>
-        <p>
-          Event bubbling is a process where an event starts at the target element and then bubbles up through its ancestors in the DOM hierarchy. This allows parent elements to handle events that occur on their children.
-        </p>
-      </div>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="card bg-base-100 shadow-md mb-4">
-      <div class="card-body">
-        <h2 class="card-title">5. How do you create, add, and remove elements using JavaScript?</h2>
-        <pre class="bg-gray-200 p-4 rounded">
+        <!-- Question 5 -->
+        <div class="card bg-base-100 shadow-md mb-4">
+            <div class="card-body">
+                <h2 class="card-title">5. How do you create, add, and remove elements using JavaScript?</h2>
+                <pre class="bg-gray-200 p-4 rounded">
 /* Create an element */
 const newEl = document.createElement('div');
 newEl.textContent = "New Element";
@@ -100,8 +109,12 @@ document.body.appendChild(newEl);
 /* Remove the element from the DOM */
 newEl.remove();
         </pre>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
+<script>document.getElementById("backToDock").addEventListener("click", function () {
+        window.history.back();
+    });</script>
+
 </html>
