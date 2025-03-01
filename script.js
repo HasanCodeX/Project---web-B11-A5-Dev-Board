@@ -1,8 +1,11 @@
 // dash to dock and back function
+
 document.getElementById("discoverBtn").addEventListener("click", function () {
   window.location.href = "blog.html";
 });
+
 // current date and time function
+
 document.addEventListener("DOMContentLoaded", function () {
   const dateElement = document.getElementById("currentDate");
 
@@ -20,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   dateElement.textContent = today.toLocaleDateString("en-US", options);
 });
+
 // task btn count history function
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -69,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const clearHistoryButton = document.getElementById("clearHistory");
 
-  clearHistoryButton.addEventListener("click", function () {
-    if (confirm("Are you sure you want to clear all activity history?")) {
+  clearHistoryButton.addEventListener("click", function () 
+    {
       const activityEntries = document.getElementById("activityEntries");
       activityEntries.innerHTML = "";
     }
-  });
+  );
 });
 
 // Function  for random color
