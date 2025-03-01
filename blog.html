@@ -68,16 +68,18 @@
         <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-3: What is event delegation in the DOM?</h2>
             <p class="text-gray-800">
-                ইভেন্ট ডেলিগেশন একটি টেকনিক যেখানে একটি প্যারেন্ট উপাদানে একটি একক ইভেন্ট লিসনার অ্যাটাচ করা হয়, যা তার সমস্ত চাইল্ড উপাদানগুলির ইভেন্টগুলিকে ম্যানেজ করে। এটি ইভেন্ট প্রপাগেশন এবং <code>event.target</code> ব্যবহার করে কাজ করে, যা ইভেন্টটির মূল উৎস (target) চিহ্নিত করতে সাহায্য করে।
+                ইভেন্ট ডেলিগেশন একটি টেকনিক যেখানে একটি parent element এ একটি একক event listener যুক্ত করা হয়, যা তার সমস্ত child element এর ইভেন্টগুলো ম্যানেজ করে। এটি event propagation এবং <code>event.target</code> ব্যবহার করে কাজ করে, যা ইভেন্টটির মূল উৎস (target) চিহ্নিত করতে সাহায্য করে।
             </p>
+            
         </div>
     
         <!-- Question 4 -->
         <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
             <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-4: What is event bubbling in the DOM?</h2>
             <p class="text-gray-800">
-                ইভেন্ট বুবলিং একটি প্রক্রিয়া যেখানে একটি ইভেন্ট প্রথমে লক্ষ্য উপাদানে (target element) শুরু হয় এবং তারপর এটি তার প্যারেন্ট উপাদানগুলোর মধ্য দিয়ে উপরের দিকে বুদ্বুদ করতে থাকে। এর মাধ্যমে, প্যারেন্ট উপাদানগুলি তাদের চাইল্ড উপাদানগুলিতে ঘটে যাওয়া ইভেন্টগুলি হ্যান্ডল করতে পারে।
+                ইভেন্ট বুবলিং একটি প্রক্রিয়া যেখানে একটি ইভেন্ট প্রথমে target element এ শুরু হয় এবং তারপর এটি তার parent element গুলোর মধ্য দিয়ে উপরের দিকে bubble করতে থাকে। এর মাধ্যমে, parent element গুলি তাদের child element এ ঘটে যাওয়া ইভেন্টগুলি handle করতে পারে।
             </p>
+            
         </div>
     
         <!-- Question 5 -->
