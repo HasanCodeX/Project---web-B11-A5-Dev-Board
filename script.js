@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "text-gray-700",
           "shadow-sm"
         );
-        activityMessage.innerHTML = `You have completed the task <b>${taskTitle}</b> at ${currentTime}`;
+        activityMessage.innerHTML = `You have completed the task ${taskTitle} at ${currentTime}`;
         document.getElementById("activityEntries").appendChild(activityMessage);
 
         button.disabled = true;
