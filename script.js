@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const activityMessage = document.createElement("div");
         activityMessage.classList.add(
-          "bg-gray-100",
+          "bg-blue-50",
           "p-3",
           "rounded-lg",
           "text-sm",
