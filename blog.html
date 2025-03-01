@@ -17,7 +17,7 @@
     <!-- Navbar -->
     <header>
         <div
-            class="navbar bg-base-100 shadow-md rounded-xl mx-auto my-4 px-4 max-w-5xl flex justify-between items-center">
+            class="navbar bg-base-100 shadow-md rounded-xl mx-auto my-4 px-4 max-w-6xl flex justify-between items-center">
             <!-- Logo & Title -->
             <div class="flex items-center space-x-2">
                 <div class="bg-blue-500 p-2 rounded-lg">
@@ -39,80 +39,68 @@
 
     <!-- blogs  -->
 
-    <div class="container mx-auto">
-        <h1 class="text-4xl font-bold mb-6 text-center">Blogs</h1>
-
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8">Blogs</h1>
+    
         <!-- Question 1 -->
-        <div class="card bg-base-100 shadow-md mb-4">
-            <div class="card-body">
-                <h2 class="card-title">1. What are the different ways to select an element in the DOM?</h2>
-                <ul class="list-disc list-inside">
-                    <li><code>getElementById()</code></li>
-                    <li><code>getElementsByClassName()</code></li>
-                    <li><code>getElementsByTagName()</code></li>
-                    <li><code>querySelector()</code></li>
-                    <li><code>querySelectorAll()</code></li>
-                </ul>
-            </div>
+        <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-1: What are the different ways to select an element in the DOM?</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>getElementById()</strong>: একটি নির্দিষ্ট আইডি সহ উপাদান নির্বাচন করে।</li>
+                <li><strong>getElementsByClassName()</strong>: একটি নির্দিষ্ট ক্লাস নাম সহ সমস্ত উপাদান নির্বাচন করে।</li>
+                <li><strong>getElementsByTagName()</strong>: একটি নির্দিষ্ট ট্যাগ নাম সহ সমস্ত উপাদান নির্বাচন করে।</li>
+                <li><strong>querySelector()</strong>: CSS সিলেক্টর ব্যবহার করে প্রথম মিলে যাওয়া উপাদান নির্বাচন করে।</li>
+                <li><strong>querySelectorAll()</strong>: CSS সিলেক্টর ব্যবহার করে সমস্ত মিলে যাওয়া উপাদান নির্বাচন করে।</li>
+            </ul>
         </div>
-
+    
         <!-- Question 2 -->
-        <div class="card bg-base-100 shadow-md mb-4">
-            <div class="card-body">
-                <h2 class="card-title">2. What is the difference between <code>innerHTML</code>, <code>innerText</code>,
-                    and <code>textContent</code>?</h2>
-                <ul class="list-disc list-inside">
-                    <li><strong>innerHTML:</strong> Gets or sets HTML markup contained within the element.</li>
-                    <li><strong>innerText:</strong> Gets or sets the visible text (ignores hidden elements).</li>
-                    <li><strong>textContent:</strong> Gets or sets the full text content, including hidden elements.
-                    </li>
-                </ul>
-            </div>
+        <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>innerHTML:</strong> এটি একটি উপাদানের ভিতরে থাকা HTML সেট করতে ব্যবহৃত হয়।</li>
+                <li><strong>innerText:</strong> এটি একটি উপাদানের দৃশ্যমান টেক্সট (যা ব্যবহারকারী দেখতে পারে) সেট করতে ব্যবহৃত হয়। </li>
+                <li><strong>textContent:</strong> এটি একটি উপাদানের সমস্ত টেক্সট কন্টেন্ট (দৃশ্যমান এবং গোপন টেক্সট সহ) সেট করতে ব্যবহৃত হয়।</li>
+            </ul>
         </div>
-
+    
         <!-- Question 3 -->
-        <div class="card bg-base-100 shadow-md mb-4">
-            <div class="card-body">
-                <h2 class="card-title">3. What is event delegation in the DOM?</h2>
-                <p>
-                    Event delegation is a technique where a single event listener is attached to a parent element to
-                    manage events from multiple child elements. It works by utilizing the event propagation and
-                    <code>event.target</code> to determine which child element triggered the event.
-                </p>
-            </div>
+        <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-3: What is event delegation in the DOM?</h2>
+            <p class="text-gray-800">
+                ইভেন্ট ডেলিগেশন একটি টেকনিক যেখানে একটি প্যারেন্ট উপাদানে একটি একক ইভেন্ট লিসনার অ্যাটাচ করা হয়, যা তার সমস্ত চাইল্ড উপাদানগুলির ইভেন্টগুলিকে ম্যানেজ করে। এটি ইভেন্ট প্রপাগেশন এবং <code>event.target</code> ব্যবহার করে কাজ করে, যা ইভেন্টটির মূল উৎস (target) চিহ্নিত করতে সাহায্য করে।
+            </p>
         </div>
-
+    
         <!-- Question 4 -->
-        <div class="card bg-base-100 shadow-md mb-4">
-            <div class="card-body">
-                <h2 class="card-title">4. What is event bubbling in the DOM?</h2>
-                <p>
-                    Event bubbling is a process where an event starts at the target element and then bubbles up through
-                    its ancestors in the DOM hierarchy. This allows parent elements to handle events that occur on their
-                    children.
-                </p>
-            </div>
+        <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-4: What is event bubbling in the DOM?</h2>
+            <p class="text-gray-800">
+                ইভেন্ট বুবলিং একটি প্রক্রিয়া যেখানে একটি ইভেন্ট প্রথমে লক্ষ্য উপাদানে (target element) শুরু হয় এবং তারপর এটি তার প্যারেন্ট উপাদানগুলোর মধ্য দিয়ে উপরের দিকে বুদ্বুদ করতে থাকে। এর মাধ্যমে, প্যারেন্ট উপাদানগুলি তাদের চাইল্ড উপাদানগুলিতে ঘটে যাওয়া ইভেন্টগুলি হ্যান্ডল করতে পারে।
+            </p>
         </div>
-
+    
         <!-- Question 5 -->
-        <div class="card bg-base-100 shadow-md mb-4">
-            <div class="card-body">
-                <h2 class="card-title">5. How do you create, add, and remove elements using JavaScript?</h2>
-                <pre class="bg-gray-200 p-4 rounded">
-/* Create an element */
-const newEl = document.createElement('div');
-newEl.textContent = "New Element";
-
-/* Add the element to the DOM */
-document.body.appendChild(newEl);
-
-/* Remove the element from the DOM */
-newEl.remove();
-        </pictur>
-            </div>
+        <div class="bg-white shadow-lg rounded-lg mb-6 p-6 hover:shadow-xl transition-shadow">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Question-5: How do you create, add, and remove elements using JavaScript?</h2>
+            <pre class="bg-gray-100 p-4 rounded-lg text-sm text-gray-800 overflow-x-auto">
+    /* Create an element */
+    const newEl = document.createElement('div');
+    newEl.textContent = "New Element";
+    
+    /* Add the element to the DOM */
+    document.body.appendChild(newEl);
+    
+    /* Remove the element from the DOM */
+    newEl.remove();
+            </pre>
         </div>
     </div>
+    
+    
 </body>
+
+<!-- function for Dock btn  -->
 <script>document.getElementById("backToDock").addEventListener("click", function () {
         window.history.back();
     });</script>
