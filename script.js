@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // task btn count history function
 
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const completedButtons = document.querySelectorAll(".completedButton");
 
@@ -37,39 +40,43 @@ document.addEventListener("DOMContentLoaded", function () {
       const taskCard = button.closest(".bg-white");
       const taskTitle = taskCard.querySelector("h3").innerText;
 
-      if (confirm(`Board Updated Successfully.`)) {
-        const currentTime = new Date().toLocaleTimeString();
+      // ✅ Confirm-এর বদলে Alert ব্যবহার করা হয়েছে
+      alert(`Board Updated Successfully.`);
 
-        const activityMessage = document.createElement("div");
-        activityMessage.classList.add(
-          "bg-blue-50",
-          "p-3",
-          "rounded-lg",
-          "text-sm",
-          "text-gray-700",
-          "shadow-sm"
-        );
-        activityMessage.innerHTML = `You have completed the task ${taskTitle} at ${currentTime}`;
-        document.getElementById("activityEntries").appendChild(activityMessage);
+      const currentTime = new Date().toLocaleTimeString();
 
-        button.disabled = true;
-        button.classList.add("bg-gray-500");
-        button.innerText = "Completed";
+      const activityMessage = document.createElement("div");
+      activityMessage.classList.add(
+        "bg-blue-50",
+        "p-3",
+        "rounded-lg",
+        "text-sm",
+        "text-gray-700",
+        "shadow-sm"
+      );
+      activityMessage.innerHTML = `You have completed the task ${taskTitle} at ${currentTime}`;
+      document.getElementById("activityEntries").appendChild(activityMessage);
 
-        const navbarNumber = document.getElementById("navbarNumber");
-        navbarNumber.innerText = parseInt(navbarNumber.innerText) + 1;
+      button.disabled = true;
+      button.classList.add("bg-gray-500");
+      button.innerText = "Completed";
 
-        const totalCardNumber = document.getElementById("totalCardNumber");
-        totalCardNumber.innerText = parseInt(totalCardNumber.innerText) - 1;
+      const navbarNumber = document.getElementById("navbarNumber");
+      navbarNumber.innerText = parseInt(navbarNumber.innerText) + 1;
 
-        completedTasksCount++;
+      const totalCardNumber = document.getElementById("totalCardNumber");
+      totalCardNumber.innerText = parseInt(totalCardNumber.innerText) - 1;
 
-        if (completedTasksCount === totalTasks) {
-          alert("Congratulations! You have completed all tasks.");
-        }
+      completedTasksCount++;
+
+      if (completedTasksCount === totalTasks) {
+        alert("Congratulations! You have completed all tasks.");
       }
     });
   });
+});
+
+  // remove history function
 
   const clearHistoryButton = document.getElementById("clearHistory");
 
@@ -79,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
       activityEntries.innerHTML = "";
     }
   );
-});
 
 // Function  for random color
 
