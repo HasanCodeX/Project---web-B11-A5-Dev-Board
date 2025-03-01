@@ -12,40 +12,44 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+
 </head>
 
-<body class="bg-base-200">
+<body class="px-10 max-w-8xl ">
     <!-- Navbar -->
-    <header>
-        <div class="navbar bg-base-100 shadow-md rounded-xl mx-auto my-4 px-4 max-w-5xl">
+    <header class="px-4  ">
+        <div class="navbar bg-base-100 shadow-md rounded-xl mx-auto mb-4 px-4 ">
             <!-- Logo & Title -->
             <div class="flex-1">
                 <a class="flex items-center space-x-2">
                     <div class="bg-blue-500 p-2 rounded-lg">
                         <img src="./assets/logo.png" alt="DevBoard Logo" class="w-6 h-6">
                     </div>
-                    <span class="text-xl font-bold text-gray-800">Dev<span class="text-blue-600">Board</span></span>
+                    <span class="text-xl font-thin text-gray-800">Dev<span class="font-bold">Board</span></span>
                 </a>
             </div>
 
-            <!-- Task Count & Theme Switch -->
-            <div class="flex items-center space-x-4"></div>
-            <div class="flex items-center bg-gray-100 px-3 py-1 rounded-full"></div>
-            <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" checked />
-            <span id="navbarNumber" class="text-lg font-bold ml-1 text-gray-900">23</span>
+            <!-- Task Count and Theme Switch -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center bg-gray-100 px-3 py-1 rounded-full">
+                    <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" checked />
+                    <span id="navbarNumber" class="text-lg font-bold ml-1 text-gray-900">23</span>
+                </div>
 
-            <button class="btn btn-circle bg-white shadow-md"><img src="./assets/theme-btn.png" alt="Theme Switch"
-                    class="w-6 h-6"></button>
 
-            </button>
+                <button id="themeBtn" class="btn btn-circle bg-white shadow-md"><img src="./assets/theme-btn.png" alt="Theme Switch"
+                        class="w-6 h-6"></button>
+            </div>
+
+
         </div>
         </div>
         </div>
     </header>
 
-    <main class="flex justify-center">
-        <section class="p-4">
-            <div class="grid grid-cols-3 gap-4 max-w-5xl mx-auto my-6">
+    <main class="flex justify-center px-4  rounded-xl gap-4">
+        <section class="p-4 bg-white shadow-lg rounded-xl">
+            <div class=" grid grid-cols-3 gap-4 max-w-5xl mx-auto my-6">
                 <!-- Task Assigned Card -->
                 <div class="bg-gray-100 rounded-xl p-4 flex items-center space-x-3 shadow-md">
                     <input type="checkbox" class="checkbox checkbox-primary checkbox-lg" checked />
@@ -59,7 +63,8 @@
                 <div
                     class="bg-gradient-to-r from-blue-500 to-indigo-400 rounded-xl p-4 flex items-center justify-center shadow-md">
                     <img src="./assets/board.png" alt="Calendar Icon" class="w-10 h-10">
-                    <button id="discoverBtn" class="text-white text-lg font-semibold ml-3">Discover Something New Today!</button>
+                    <button id="discoverBtn" class="text-white text-lg font-semibold ml-3">Discover Something New
+                        Today!</button>
                 </div>
 
                 <!-- Date Card -->
@@ -81,7 +86,7 @@
             <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto my-8">
                 <!-- Task Card 1 -->
 
-                
+
 
                 <div class="bg-white shadow-lg rounded-xl p-5 border border-gray-200">
                     <p class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-lg inline-block">ShopEase</p>
@@ -89,10 +94,11 @@
                     <p class="text-gray-500 text-sm mt-1">Debug using Chrome DevTools, check for overlapping ...</p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
-                
+
 
                 <!-- Task Card 2 -->
                 <div class="bg-white shadow-lg rounded-xl p-5 border border-gray-200">
@@ -102,7 +108,8 @@
                     </p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
 
@@ -113,7 +120,8 @@
                     <p class="text-gray-500 text-sm mt-1">Debug using Chrome DevTools, check for overlapping ...</p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button  class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
 
@@ -124,7 +132,8 @@
                     <p class="text-gray-500 text-sm mt-1">Debug using Chrome DevTools, check for overlapping ...</p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button  class=" completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class=" completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
 
@@ -135,7 +144,8 @@
                     <p class="text-gray-500 text-sm mt-1">Debug using Chrome DevTools, check for overlapping ...</p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button  class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
 
@@ -146,7 +156,8 @@
                     <p class="text-gray-500 text-sm mt-1">Debug using Chrome DevTools, check for overlapping ...</p>
                     <div class="mt-4 flex justify-between items-center">
                         <p class="text-sm text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
-                        <button class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm">Completed</button>
+                        <button
+                            class="completedButton bg-blue-500 text-white px-4 py-1 rounded-md text-sm btn">Completed</button>
                     </div>
                 </div>
             </div>
@@ -161,18 +172,19 @@
             <!-- Title -->
             <div class="flex items-center justify-center space-x-2 mb-3">
                 <span class="text-xl"><img src="./assets/activity.png" alt=""></span>
-                <h2 class="font-semibold text-lg">Activity Log</h2>
+                <h2 class="font-thin text-lg">Activity Log</h2>
             </div>
 
             <!-- Clear History Button -->
-            <button id="clearHistory" class="bg-blue-500 text-white px-4 py-2 rounded-md w-full font-semibold">
+             <div class="flex justify-center items-center ">
+            <button id="clearHistory" class=" btn bg-blue-500 text-white px-4 py-2 rounded-md  font-semibold">
                 Clear History
-            </button>
+            </button></div>
 
             <!-- Activity Entries -->
-            <div id="activityEntries"  class="mt-4 space-y-3">
-                
-                
+            <div id="activityEntries" class="mt-4 space-y-3  ">
+
+
             </div>
         </section>
 

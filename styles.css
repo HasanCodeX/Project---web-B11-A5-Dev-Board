@@ -1,31 +1,7 @@
 /* Custom CSS Enhancements */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
-  }
   
-  /* Task Card Hover Animation */
-  .task-card {
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
-  .task-card:hover {
-    transform: scale(1.03);
-  }
-  
-  /* Completed Task Visual */
-  .completed {
-    opacity: 0.6;
-    text-decoration: line-through;
-  }
-  
-  /* Custom adjustments for DaisyUI cards if needed */
-  .card {
-    border-radius: 1rem;
-  }
-  
-  /* Optional: Custom button hover effects */
-  .btn:hover {
-    filter: brightness(90%);
-  }
-  
+    font-family: 'Poppins', sans-serif;
+}
