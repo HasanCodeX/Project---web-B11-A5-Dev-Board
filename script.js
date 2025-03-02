@@ -1,95 +1,120 @@
-// dash to dock and back function
-
+// function for discover btn
 document.getElementById("discoverBtn").addEventListener("click", function () {
   window.location.href = "blog.html";
 });
 
-// current date and time function
-
+// function for present date
 document.addEventListener("DOMContentLoaded", function () {
-  const dateElement = document.getElementById("currentDate");
+  var today = new Date();
+  var dateElement = document.getElementById("currentDate");
 
-  const today = new Date();
-  const options = { year: "numeric", month: "long", day: "numeric" };
+  if (dateElement) {
+    dateElement.innerText =
+      getMonthName(today.getMonth()) +
+      " " +
+      today.getDate() +
+      " " +
+      today.getFullYear();
+  }
 
-  dateElement.textContent = today.toLocaleDateString("en-US", options);
+  var dayElement = document.getElementById("currentDay");
+  if (dayElement) {
+    dayElement.innerText = getDayName(today.getDay());
+  }
 });
 
+// function for month name
+function getMonthName(monthIndex) {
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return months[monthIndex];
+}
+
+// function for day name
+function getDayName(dayIndex) {
+  var days = ["Sun,", "Mon,", "Tue,", "Wed,", "Thu,", "Fri,", "Sat,"];
+  return days[dayIndex];
+}
+
+// function for task card
 document.addEventListener("DOMContentLoaded", function () {
-  const dateElement = document.getElementById("currentDay");
+  var completedButtons = document.getElementsByClassName("completedButton");
+  var completedTasksCount = 0;
 
-  const today = new Date();
-  const options = { weekday: "long" };
+  // function for completed button
+  for (var i = 0; i < completedButtons.length; i++) {
+    completedButtons[i].addEventListener("click", function () {
+      var taskCard = this.closest(".bg-white");
+      if (!taskCard) return;
 
-  dateElement.textContent = today.toLocaleDateString("en-US", options);
-});
+      var taskTitle = taskCard.getElementsByTagName("h3")[0].innerText;
 
-// task btn count history function
+      alert("Board Updated Successfully.");
 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const completedButtons = document.querySelectorAll(".completedButton");
-
-  let completedTasksCount = 0;
-  const totalTasks = completedButtons.length;
-
-  completedButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const taskCard = button.closest(".bg-white");
-      const taskTitle = taskCard.querySelector("h3").innerText;
-
-      // ✅ Confirm-এর বদলে Alert ব্যবহার করা হয়েছে
-      alert(`Board Updated Successfully.`);
-
-      const currentTime = new Date().toLocaleTimeString();
-
-      const activityMessage = document.createElement("div");
-      activityMessage.classList.add(
-        "bg-blue-50",
-        "p-3",
-        "rounded-lg",
-        "text-sm",
-        "text-gray-700",
-        "shadow-sm"
-      );
-      activityMessage.innerHTML = `You have completed the task ${taskTitle} at ${currentTime}`;
+      // function for activity history
+      var activityMessage = document.createElement("div");
+      activityMessage.className =
+        "bg-blue-50 p-3 rounded-lg text-sm text-gray-700 shadow-sm";
+      activityMessage.innerHTML =
+        "You have completed the task " +
+        taskTitle +
+        " at " +
+        new Date().toLocaleTimeString();
       document.getElementById("activityEntries").appendChild(activityMessage);
 
-      button.disabled = true;
-      button.classList.add("bg-gray-500");
-      button.innerText = "Completed";
+      //  for disable themeBtn
 
-      const navbarNumber = document.getElementById("navbarNumber");
-      navbarNumber.innerText = parseInt(navbarNumber.innerText) + 1;
+      this.disabled = true;
+      this.className += " bg-gray-500";
 
-      const totalCardNumber = document.getElementById("totalCardNumber");
-      totalCardNumber.innerText = parseInt(totalCardNumber.innerText) - 1;
+      //  function for Navbar and  Total Task Count
+      var navbarNumber = document.getElementById("navbarNumber");
+      var totalCardNumber = document.getElementById("totalCardNumber");
+
+      if (navbarNumber) {
+        navbarNumber.innerText = parseInt(navbarNumber.innerText) + 1;
+      }
+
+      if (totalCardNumber) {
+        totalCardNumber.innerText = parseInt(totalCardNumber.innerText) - 1;
+      }
 
       completedTasksCount++;
 
-      if (completedTasksCount === totalTasks) {
+      // function for congratulation allert
+      if (completedTasksCount === completedButtons.length) {
         alert("Congratulations! You have completed all tasks.");
       }
     });
-  });
+  }
 });
 
-  // remove history function
+// function for clear history btn
 
-  const clearHistoryButton = document.getElementById("clearHistory");
-
-  clearHistoryButton.addEventListener("click", function () 
-    {
-      const activityEntries = document.getElementById("activityEntries");
-      activityEntries.innerHTML = "";
+var clearHistoryButton = document.getElementById("clearHistory");
+if (clearHistoryButton) {
+  clearHistoryButton.addEventListener("click", function () {
+    var activityEntries = document.getElementById("activityEntries");
+    if (activityEntries) {
+      activityEntries.innerHTML = ""; // সমস্ত activity history মুছে ফেলবে
     }
-  );
+  });
+}
 
-// Function  for random color
-
-const colors = [
+// function for color theme
+var colors = [
   "midnightblue",
   "slategray",
   "teal",
@@ -102,14 +127,16 @@ const colors = [
   "dimgray",
 ];
 
-let currentColorIndex = 0;
+var currentColorIndex = 0;
 
-document.getElementById("themeBtn").addEventListener("click", function () {
-  document.body.style.backgroundColor = colors[currentColorIndex];
+var themeBtn = document.getElementById("themeBtn");
+if (themeBtn) {
+  themeBtn.addEventListener("click", function () {
+    document.body.style.backgroundColor = colors[currentColorIndex];
 
-  currentColorIndex++;
-
-  if (currentColorIndex >= colors.length) {
-    currentColorIndex = 0;
-  }
-});
+    currentColorIndex++;
+    if (currentColorIndex >= colors.length) {
+      currentColorIndex = 0; // যদি সমস্ত কালার শেষ হয়, রিসেট হবে।
+    }
+  });
+}
